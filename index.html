@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: auto;
+            color: white;;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI';
+        }
+        .content--canvas {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            display: grid;
+            place-items: center;
+        }
+        body {
+            min-height: 100vh;
+            overflow: hidden;;
+        }
+        div {
+            background: rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            border-radius: 6px;
+            display: grid;
+            place-items: center;
+            text-align: center;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .card {
+        width: min(720px, 92vw);
+        background: rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 16px;
+        padding: 1.75rem;
+        text-align: center;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+        display: grid;
+        place-items: center;
+        }
+        .wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            place-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content--canvas"></div>
+    <div class="wrap">
+    <div class="card">
+        <h1>Tahir Ansari</h1>
+        <p>Current MSc Bioinformatics student at the University of Nottingham.<br>
+           I have an undergraduate background in Biomedical Science</p>
+    </div>
+
+    <div class="card">
+    <h2>Projects</h2>
+    <p>Find my projects on github including repos on population genomics, Deseq2 analysis and more.</p>
+    </div>
+
+    <div class="card">
+        <h2>Contact</h2>
+        <p><a href="https://github.com/mbxta9">Github</a> <br>
+        <a href="https://www.linkedin.com/in/tahir-ansari-57b834236">Linkedin</a></p>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/simplex-noise@2.4.0/simplex-noise.min.js"></script>
+    <script>
+        const TAU = Math.PI * 2;
+        const rand = n => Math.random() * n;
+        const cos = Math.cos;
+        const sin = Math.sin;
+
+        function fadeInOut(life, ttl) {
+            const half = ttl / 2;
+            return life < half ? life / half : 1 - (life - half) / half;
+        }
+    </script>
+    <script src="background.js"></script>
+</body>
+</html>
